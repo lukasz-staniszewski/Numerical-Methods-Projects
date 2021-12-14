@@ -1,13 +1,16 @@
 [x, y] = getData();
 max_degrees = 10;
 
-normes_2=zeros(max_degrees+1,1);
-normes_max=zeros(max_degrees+1, 1);
+degs=[2, 5, 8];
+max_degrees=size(degs,1);
 
-for degree=0:max_degrees
+normes_2=zeros(max_degrees,1);
+normes_max=zeros(max_degrees, 1);
+
+for degree=degs
     A = getA(degree, x);
-    % a=solveQR(degree, A,y);
-    a=solveNormal(A,y);
+    a=solveQR(degree, A,y);
+    % a=solveNormal(A,y);
     x_f=(-5:0.1:5.0)';
     y_f=zeros(size(x_f,1), 1);
     for ind = 1:101
@@ -40,11 +43,11 @@ end
 % disp('Second norm of errors of approximations with next polynomials using QR');
 disp('Second norm of errors of approximations with next polynomials using System of Normal Equations');
 
-for i=0:max_degrees
+for i=degs
     disp(normes_2(i+1));
 end
 % disp('Max norm of errors of approximations with next polynomials using QR');
 disp('Max norm of errors of approximations with next polynomials using System of Normal Equations');
-for i=0:max_degrees
+for i=degs
     disp(normes_max(i+1));
 end
