@@ -1,10 +1,10 @@
 function [Q,R]=qrgsm(A)
-    %QR decomposition with modified Gram-Schmidt method
-    %From dr Tatjewski MNUM slides
+    %QR decomposition with modified Gram-Schmidt method from MNUM slides
     [m, n]=size(A); 
     Q=zeros(m,n); 
     R=zeros(n,n); 
     d=zeros(1,n);
+    
     %Q columns orthogonal
     for i=1:n
         Q(:,i)=A(:,i);
@@ -15,6 +15,7 @@ function [Q,R]=qrgsm(A)
             A(:,j)=A(:,j)-R(i,j)*Q(:,i);
         end
     end
+    
     %Q columns orthonormal
     for i=1:n
         dd=norm(Q(:,i));

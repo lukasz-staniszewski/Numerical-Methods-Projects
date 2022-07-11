@@ -10,4 +10,6 @@
 </div>
 
 ## Projects
-1. Project 1 - Computer Machine Accuracy, Gaussian elimination with partial selection of basic element, The Jacobi Iterative Method
+1. Computer Machine Accuracy, Gaussian elimination with partial selection of basic element, The Jacobi Iterative Method
+2. Determination of the polynomial function that best approximates the data. The system of normal equations and the QR decomposition of the equations system matrix of the problem.
+3. 

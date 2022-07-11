@@ -1,9 +1,9 @@
 function [x] = solveGaussPartial(A, b)
-%SOLVEGAUSSPARTIAL Wyznacza rozwiazanie ukladu rownan liniowych Ax=b.
-    n = size(A, 1);        % liczba rownan
-    Ab = [A b];            % dla ulatwienia laczymy poziomo A z b (macierz rozszerzona)
-    for k=1:n              % k to krok eliminacji gaussa
-        % wybor elementu glownego
+%SOLVEGAUSSPARTIAL Determines the solution of a system of linear equations Ax=b.
+    n = size(A, 1);        % number of equations
+    Ab = [A b];            % to simplify things, we horizontally link A with b (expanded matrix)
+    for k=1:n              % k is the Gaussian elimination step
+        % selection of the main element
         main_el = abs(Ab(k,k));
         main_el_ind = k;
         for j = k+1:n
@@ -12,20 +12,22 @@ function [x] = solveGaussPartial(A, b)
                 main_el_ind = j;
             end
         end
-        % zamiana wierszy
+
+        % swapping rows
         temp_row = Ab(main_el_ind,:);
         Ab(main_el_ind,:) = Ab(k, :);
         Ab(k, :) = temp_row;
         
-        % eliminacja Gaussa - liczymy l_ik i odejmujemy pomnozone przez
-        % wiersz k od wiersza i
+        % Gaussian elimination - count l_ik and subtract multiplied by
+        % row k from row i
         for i=k+1:n
             l = Ab(i,k) / Ab(k,k);
             Ab(i,:)=Ab(i,:) - l * Ab(k, :);
         end
     end
-    % teraz posiadamy już macierz trojkatna oraz przeksztalcony wektor 
-    % prawych stron b i rozwiazujemy rownanie od dolu
+
+    % now we have the triangular matrix and the transformed vector 
+    % of the right-hand sides of b and solve the equation from below
     x = zeros(n,1);
     for k = n:-1:1
         sum_x = 0;
