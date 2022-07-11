@@ -1,9 +1,9 @@
 function [steps, x, time, errors] = RK4ConstantSolver(f, x_start, range, h)
-%Solver oblicza przebieg trajektorii ruchu metodą RK4 ze stałym krokiem
-    % f - funkcja opisująca ruch
-    % range - zakres, w jakim jest wykonywany ruch
-    % h - krok metody
-    % x0 - warunek początkowy
+% RK4ConstantSolver calculates the trajectory of the movement using the RK4 method with constant step
+    % f - function describing the movement
+    % range - range in which the movement is executed
+    % h - step of the method
+    % x0 - initial condition
     tic;
     h_error = 0.5*h;
     yn = x_start;
@@ -13,13 +13,16 @@ function [steps, x, time, errors] = RK4ConstantSolver(f, x_start, range, h)
     errors = zeros(size(steps_vec, 2),2);
     iter = 1;
     x(1, :) = yn';
+    
     for step=range(1):h:range(2)
         k1 = f(yn);
         k2 = f(yn + 0.5*h*k1);
         k3 = f(yn + 0.5*h*k2);
         k4 = f(yn + h*k3);
         yn_1 = yn + 1/6 * h * (k1 + 2*k2 + 2*k3 + k4);
-        yn_error = yn;      % fragment odpowiedzialny za naliczanie błędów
+        
+        % fragment responsible for error counting
+        yn_error = yn;
         for iter_error=1:2
             k1 = f(yn_error);
             k2 = f(yn_error+0.5*h_error*k1);

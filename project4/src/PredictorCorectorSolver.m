@@ -1,9 +1,9 @@
 function [steps, x, time, errors] = PredictorCorectorSolver(f, x_start, range, h)
-%Solver oblicza przebieg trajektorii ruchu metodą RK4 ze stałym krokiem
-    % f - funkcja opisująca ruch
-    % range - zakres, w jakim jest wykonywany ruch
-    % h - krok metody
-    % x0 - warunek początkowy
+%PREDICTORCORECTORSOLVER calculates the trajectory using the RK4 method with a constant step.
+    % f - function describing the movement
+    % range - range within which the movement is performed
+    % h - step of the method
+    % x0 - initial condition
     number_steps = 4;
     tic;
     h_error = 0.5*h;
@@ -14,13 +14,17 @@ function [steps, x, time, errors] = PredictorCorectorSolver(f, x_start, range, h
     errors = zeros(size(steps_vec, 2),2);
     iter = 1;
     x(1, :) = yn';
-    for step=2:number_steps    % pierwsze 4 sa obliczane jak poprzednio
+    
+    for step=2:number_steps
+        % the first 4 are calculated as before
         k1 = f(yn);
         k2 = f(yn + 0.5*h*k1);
         k3 = f(yn + 0.5*h*k2);
         k4 = f(yn + h*k3);
         yn_1 = yn + 1/6 * h * (k1 + 2*k2 + 2*k3 + k4);
-        yn_error = yn;      % fragment odpowiedzialny za naliczanie błędów
+
+        % fragment responsible for the calculation of errors
+        yn_error = yn;      
         for iter_error=1:2
             k1 = f(yn_error);
             k2 = f(yn_error+0.5*h_error*k1);
@@ -34,9 +38,11 @@ function [steps, x, time, errors] = PredictorCorectorSolver(f, x_start, range, h
         steps(iter,1) = step + h;
         x(iter, :) = yn;
     end
+    
     beta = [55/24, -59/24, 37/24, -9/24];
     beta_star = [251/720, 646/720, -264/720, 106/720, -19/720];
     iter = iter + 1;
+    
     for step=number_steps+1:size(steps_vec,2)
         sum_beta = [0, 0]; % P
         for j=1:number_steps

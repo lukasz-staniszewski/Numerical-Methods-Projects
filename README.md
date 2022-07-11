@@ -16,4 +16,5 @@
 <div align="center"> [PL] <a href="https://github.com/lukasz-staniszewski/multimedia-projects/blob/main/signals/doc/doc.pdf">DOCUMENTATION HERE</a> [PL] </div>
 3. Finding function zeros, finding roots of a polynomial function.
 <div align="center"> [PL] <a href="https://github.com/lukasz-staniszewski/multimedia-projects/blob/main/signals/doc/doc.pdf">DOCUMENTATION HERE</a> [PL] </div>
-4. 
+4. RK4 method with constant step. Adams predictor-corrector method.
+<div align="center"> [PL] <a href="https://github.com/lukasz-staniszewski/multimedia-projects/blob/main/signals/doc/doc.pdf">DOCUMENTATION HERE</a> [PL] </div>
