@@ -1,49 +1,13 @@
-<h1 align="center">Cringe Cringe Cringe Cringe Cringe</h1>
+<h1 align="center">Numerical Methods Projects</h1>
+<h3 align="center">Łukasz Staniszewski</h1>
 
 <div align="center">
-<img src="https://user-images.githubusercontent.com/59453698/137625960-073f393f-2108-4afe-9936-7a0b745d2740.png" alt="cringe banner">
+<img src="https://user-images.githubusercontent.com/59453698/178227372-a2ba653c-dc26-4c62-b1a1-62d0759408c2.png" alt="cringe banner">
 </div>
 
+<div align="center">
+  Here are my Numerical Methods projects made as part of a studies course.
+</div>
 
-<h6 align="center">Cringe</h6>
-<h5 align="center">Cringe</h5>
-<h4 align="center">Cringe</h4>
-<h3 align="center">Cringe</h3>
-<h2 align="center">Cringe</h2>
-<h3 align="center">Cringe</h3>
-<h4 align="center">Cringe</h4>
-<h5 align="center">Cringe</h5>
-<h6 align="center">Cringe</h6>
-<h5 align="center">Cringe</h5>
-<h4 align="center">Cringe</h4>
-<h3 align="center">Cringe</h3>
-<h2 align="center">Cringe</h2>
-<h3 align="center">Cringe</h3>
-<h4 align="center">Cringe</h4>
-<h5 align="center">Cringe</h5>
-<h6 align="center">Cringe</h6>
-<h5 align="center">Cringe</h5>
-<h4 align="center">Cringe</h4>
-<h3 align="center">Cringe</h3>
-<h2 align="center">Cringe</h2>
-<h3 align="center">Cringe</h3>
-<h4 align="center">Cringe</h4>
-<h5 align="center">Cringe</h5>
-<h6 align="center">Cringe</h6>
-<h5 align="center">Cringe</h5>
-<h4 align="center">Cringe</h4>
-<h3 align="center">Cringe</h3>
-<h2 align="center">Cringe</h2>
-<h3 align="center">Cringe</h3>
-<h4 align="center">Cringe</h4>
-<h5 align="center">Cringe</h5>
-<h6 align="center">Cringe</h6>
-<h5 align="center">Cringe</h5>
-<h4 align="center">Cringe</h4>
-<h3 align="center">Cringe</h3>
-<h2 align="center">Cringe</h2>
-<h3 align="center">Cringe</h3>
-<h4 align="center">Cringe</h4>
-<h5 align="center">Cringe</h5>
-
-
+## Projects
+1. Project 1 - Computer Machine Accuracy, Gaussian elimination with partial selection of basic element, The Jacobi Iterative Method

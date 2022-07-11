@@ -1,5 +1,5 @@
 function [is_dominant] = checkDominance(A)
-%CHECKDOMINANCE Sprawdza czy macierz A jest silnie diagonalnie dominująca.
+%CHECKDOMINANCE Checks if matrix A is strongly diagonally dominant.
     is_dominant_row = true;
     is_dominant_col = true;
     for i=1:size(A, 1)

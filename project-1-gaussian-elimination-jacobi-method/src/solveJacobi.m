@@ -1,16 +1,18 @@
 function [x] = solveJacobi(A, b, e2)
-    %SOLVEJACOBI Oblicza układ równań metodą Jacobiego
-    % sprawdzenie dominacji diagonalnej
+    %SOLVEJACOBI Calculates a system of equations using the Jacobi method
+    % verification of diagonal dominance
     if(checkDominance(A) == false)
-       disp("Macierz bez silnej dominacji diagonalnej!");
+       disp("A matrix without strong diagonal dominance!");
        return
     end
-    %   Stworzenie macierzy L, D i U
-    n = size(A, 1);   % n - liczba równań
+    
+    % creation of L, D and U matrices
+    n = size(A, 1);   % n - number of equations
     L = zeros(n);
     D = zeros(n);
     U = zeros(n);
-    x = zeros(n, 1);   % x to wektor wynikowy
+    x = zeros(n, 1);   % x is the resultant vector
+    
     for i=1:n
         D(i,i) = A(i, i);
         for j=1:n
@@ -21,15 +23,17 @@ function [x] = solveJacobi(A, b, e2)
             end
         end
     end
+    
     if(det(D)==0)
-        disp("Macierz D nieosobliwa!");
+        disp("D matrix is impersonal!");
         return;
     end
+
     lim_error = e2;
-    % dopoki nie jest przekroczony błąd graniczny
+    % as long as the limiting error is not exceeded
     while lim_error >= e2
         x_before = x;
-        % tworzymy wektor x dla kolejnego kroku przyblizenia
+        % vector x for the next approximation step
         for j=1:n
             sum_k = 0;
             for k=1:n
@@ -37,7 +41,7 @@ function [x] = solveJacobi(A, b, e2)
             end
             x(j) = -1 / D(j,j) * (sum_k - b(j));
         end
-        % na koncu roznica w postaci normy z różnicy kolejnych przyblizen
+        % difference in the form of a standard from the difference of successive approximations
         lim_error = norm(x - x_before, 2);
     end
 
