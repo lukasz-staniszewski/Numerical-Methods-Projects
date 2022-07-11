@@ -11,5 +11,9 @@
 
 ## Projects
 1. Computer Machine Accuracy, Gaussian elimination with partial selection of basic element, The Jacobi Iterative Method
+<div align="center"> [PL] <a href="https://github.com/lukasz-staniszewski/multimedia-projects/blob/main/signals/doc/doc.pdf">DOCUMENTATION HERE</a> [PL] </div>
 2. Determination of the polynomial function that best approximates the data. The system of normal equations and the QR decomposition of the equations system matrix of the problem.
-3. 
+<div align="center"> [PL] <a href="https://github.com/lukasz-staniszewski/multimedia-projects/blob/main/signals/doc/doc.pdf">DOCUMENTATION HERE</a> [PL] </div>
+3. Finding function zeros, finding roots of a polynomial function.
+<div align="center"> [PL] <a href="https://github.com/lukasz-staniszewski/multimedia-projects/blob/main/signals/doc/doc.pdf">DOCUMENTATION HERE</a> [PL] </div>
+4. 

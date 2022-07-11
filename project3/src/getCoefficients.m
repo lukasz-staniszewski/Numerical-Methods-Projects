@@ -1,6 +1,5 @@
 function [coefficients] = getCoefficients()
-%GETPOLYNOMIAL Summary of this function goes here
-%   Detailed explanation goes here
+%GETPOLYNOMIAL Preparing coefficients for tasks.
     coefficients = [-2; 5; 7; 1; 3];
 end
 

@@ -7,6 +7,7 @@ function [c] = bisectionSolver(a0, b0, function_f, delta, max_iter)
     f_c = function_f(c);
     next_args(n_iter) = c;
     next_vals(n_iter) = f_c;
+    
     while abs(f_c)>delta && max_iter >= n_iter && (b-a)>delta
         f_a = function_f(a);
         if f_a * f_c < 0
@@ -20,8 +21,9 @@ function [c] = bisectionSolver(a0, b0, function_f, delta, max_iter)
         next_args(n_iter) = c;
         next_vals(n_iter) = f_c;
     end
-    disp(["Liczba iteracji: ", n_iter]);
-    disp(["Punkt końcowy: ", c]);
-    disp(["Wartość dla punktu końcowego", f_c]);
+    
+    disp(["Number of iterations: ", n_iter]);
+    disp(["End point: ", c]);
+    disp(["End point value: ", f_c]);
 end
 
